@@ -1,0 +1,70 @@
+// ==========================================
+// 1. GLOBAL WINDOW STYLING & BLUR EFFECTS
+// ==========================================
+window-rule {
+    // Empty match block applies these parameters to EVERY window globally
+    match {
+    }
+ 
+
+    // Window geometry styling
+    geometry-corner-radius 15
+    clip-to-geometry true
+    draw-border-with-background false
+
+    // Sets windows to 12% transparent so Niri can reveal the blur underneath
+    opacity 0.85
+
+    // Configures the backend rendering pipeline for high-fidelity blur
+    background-effect {
+        blur true
+        xray true       // Highly optimized method that blurs straight down to the wallpaper
+        noise 0.015      // Eliminates rough color gradients or banding artifacts
+        saturation 1.15 // Slightly boosts the colors of your wallpaper passing through
+    }
+}
+
+
+// ==========================================
+// 2. APPLICATION-SPECIFIC WINDOW RULES
+// ==========================================
+
+// Floating Noctalia control panel styling
+window-rule {
+    match app-id="dev.noctalia.Noctalia"
+    open-floating true
+    default-column-width { fixed 1080; }
+    default-window-height { fixed 920; }
+}
+
+// Steam overlay and secondary panel float configurations
+window-rule {
+    match app-id="steam"
+    exclude title=r"^[Ss]team$"
+    open-floating true
+}
+
+// Steam notification popups fixed positioning
+window-rule {
+   match app-id="steam" title=r"^notificationtoasts_\d+_desktop$"
+   default-floating-position x=10 y=10 relative-to="bottom-right"
+   open-focused false
+}
+
+
+// ==========================================
+// 3. NOCTALIA SHELL & SURFACE LAYER RULES
+// ==========================================
+layer-rule {
+    match namespace="^noctalia-wallpaper"
+    place-within-backdrop true
+}
+
+// Gives your status bars, panels, and docks a unified frosted glass finish
+layer-rule {
+    match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+    background-effect {
+        xray false
+        blur true
+    }
+}
