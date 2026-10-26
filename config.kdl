@@ -31,7 +31,7 @@ environment {
 blur {
     // 1. BLUR STRENGTH (More passes = heavier, smoother frosted glass)
     // Default is 3. Bump it up to 4 or 5 for an incredibly strong, thick blur.
-    passes 3
+    passes 4
 
     // 2. SAMPLE RADIUS (Spread distance per rendering pass)
     // Default is 3.0. Higher values (like 4.0 or 5.0) spread the blur wider,
