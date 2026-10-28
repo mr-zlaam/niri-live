@@ -663,4 +663,5 @@ binds {
     Mod+O repeat=false { toggle-overview; }
     Mod+v { spawn-sh "noctalia msg panel-toggle clipboard"; }
     Mod+x { close-window; }
+    Mod+z { spawn-sh "noctalia msg settings-toggle"; }
 }
