@@ -22,7 +22,6 @@ include "./cfg/layout.kdl"
 include "./cfg/rules.kdl"
 include "./cfg/misc.kdl"
 
-include "noctalia.kdl"
 environment {
     QT_QPA_PLATFORM "wayland"
     QT_QPA_PLATFORMTHEME "qt6ct"
@@ -46,3 +45,5 @@ window-rule {
 
 }
 
+
+include "noctalia.kdl"
