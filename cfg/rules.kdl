@@ -32,9 +32,9 @@ window-rule {
 // Floating Noctalia control panel styling
 window-rule {
     match app-id="dev.noctalia.Noctalia"
-    open-floating true
-    default-column-width { fixed 1080; }
-    default-window-height { fixed 920; }
+    open-floating false
+    // default-column-width { fixed 1080; }
+    // default-window-height { fixed 920; }
 }
 
 // Steam overlay and secondary panel float configurations
