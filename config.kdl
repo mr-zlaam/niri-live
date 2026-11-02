@@ -45,5 +45,9 @@ window-rule {
 
 }
 
-
+window-rule {
+        match app-id=r#"^[Tt]or [Bb]rowser$"#
+        open-floating true
+        open-maximized false
+    }
 include "noctalia.kdl"
