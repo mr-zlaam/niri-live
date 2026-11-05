@@ -646,7 +646,7 @@ binds {
     // CTRL+Shift+1                        { screenshot; }
     // CTRL+Shift+2                        { screenshot-screen; }
     // CTRL+Shift+3                        { screenshot-window; }
-    Print hotkey-overlay-title="Interactive Screenshot" { screenshot; }
+    Print allow-when-locked=true hotkey-overlay-title="Interactive Screenshot" { spawn-sh "noctalia msg screenshot-region --annotate"; }
     Alt+Print hotkey-overlay-title="Screenshot Active Screen" { screenshot-screen; }
     Shift+Print hotkey-overlay-title="Screenshot Active Window" { screenshot-window; }
 
