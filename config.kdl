@@ -43,14 +43,14 @@ window-rule {
     clip-to-geometry true
     open-maximized false
 //    open-maximized true
+
 }
 
 window-rule {
-        match app-id=r"^[Tt]or [Bb]rowser$"
+        match app-id=r#"^[Tt]or [Bb]rowser$"#
         open-floating true
         open-maximized false
-}
-
+    }
 
 // Add this to your ~/.config/niri/config.kdl
 include "noctalia.kdl"
