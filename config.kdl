@@ -30,7 +30,7 @@ environment {
 blur {
     // 1. BLUR STRENGTH (More passes = heavier, smoother frosted glass)
     // Default is 3. Bump it up to 4 or 5 for an incredibly strong, thick blur.
-    passes 4
+    passes 3
 
     // 2. SAMPLE RADIUS (Spread distance per rendering pass)
     // Default is 3.0. Higher values (like 4.0 or 5.0) spread the blur wider,
@@ -39,18 +39,17 @@ blur {
 }
 // Set rounded corners for all windows globally
 window-rule {
-    geometry-corner-radius 8
+    geometry-corner-radius 15
     clip-to-geometry true
-    open-maximized false
+    open-maximized true
 //    open-maximized true
-
 }
 
 window-rule {
-        match app-id=r#"^[Tt]or [Bb]rowser$"#
+        match app-id=r"^[Tt]or [Bb]rowser$"
         open-floating true
         open-maximized false
-    }
+}
 
 // Add this to your ~/.config/niri/config.kdl
 include "noctalia.kdl"
